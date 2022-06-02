@@ -1,0 +1,22 @@
+.conversor {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    max-width: 18rem;
+    margin: 1rem;
+    border: 3px solid white;
+    border-radius: .4rem;
+}
+
+.conversor h1 {
+    min-width: max-content;
+}
+
+button,
+p {
+    font-weight: bolder;
+}
+
+p {
+    margin-top: .6rem;
+}
