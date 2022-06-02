@@ -8,7 +8,7 @@
 
 O Conversor de Moeda$ é uma aplicação web responsiva que permite a conversão de várias moedas de acordo com a cotação atual atualizada.
 
-Acesse o projeto: O Conversor de Moeda$ é uma aplicação web responsiva que permite a conversão de várias moedas de acordo com a cotação atual atualizada.
+Acesse o projeto: https://hudsonsamuelsantos.github.io/conversor-de-moedas-react/
 
 ## Funcionalidades:
 
