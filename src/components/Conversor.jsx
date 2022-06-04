@@ -1,31 +1,36 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import "./Conversor.css";
 
-export default function Conversor(props) {
-    const [value, setValue] = useState("")
-    const [resultado, setResultado] = useState()
+export default function Conversor({ firstCurrency, secondCurrency }) {
+  const [value, setValue] = useState("");
+  const [result, setResult] = useState();
 
-    function converter() {
+  const handleConvertMoney = async () => {
+    const url = `https://api.apilayer.com/currency_data/convert?to=${secondCurrency}&from=${firstCurrency}&amount=${value}`;
 
-        let de_Para = `${props.moedaA}_${props.moedaB}`
-        let url = `https://free.currconv.com/api/v7/convert?q=${de_Para}&compact=ultra&apiKey=a6dc893746632079e235`;
-
-        fetch(url).then(resultado => {
-            return resultado.json()
-        }).then(json => {
-            let cotacao = json[de_Para]
-            let valorConvertido = parseFloat((value * cotacao).toFixed(2))
-
-            setResultado(valorConvertido)
-        })
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          apiKey: "ZTRz2SbcJOGK6d43mKq730ncoQL1VXUe",
+        },
+      });
+      setResult(response?.data?.result);
+      toast.success("Conversão realizada com sucesso!");
+    } catch (error) {
+      toast.error("Erro ao converter moeda");
     }
+  };
 
-    return (
-        <div className="conversor">
-            <h1>{props.moedaA} para {props.moedaB}</h1>
-            <input type="text" onChange={e => setValue(e.target.value)} />
-            <button onClick={converter}>Converter</button>
-            <p>Valor convertido: {resultado}</p>
-        </div>
-    )
+  return (
+    <div className="conversor">
+      <h1>
+        {firstCurrency} para {secondCurrency}
+      </h1>
+      <input type="text" onChange={(e) => setValue(e.target.value)} />
+      <button onClick={handleConvertMoney}>Converter</button>
+      <p>Valor convertido: {result}</p>
+    </div>
+  );
 }
