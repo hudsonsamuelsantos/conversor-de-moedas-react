@@ -6,17 +6,22 @@
     margin: 1rem;
     border: 3px solid white;
     border-radius: .4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-.conversor h1 {
-    min-width: max-content;
+button {
+    width: max-content;
+    padding: 0.2rem;
 }
 
-button,
-p {
-    font-weight: bolder;
+.inputAndFirstCurrency {
+    display: flex;
 }
 
-p {
-    margin-top: .6rem;
+input,
+select {
+    width: 50%;
 }
