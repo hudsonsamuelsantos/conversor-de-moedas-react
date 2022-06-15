@@ -20,8 +20,8 @@ Acesse o projeto: https://hudsonsamuelsantos.github.io/conversor-de-moedas-react
 
 - React, Hooks
 - Javascript
-- Fetch API
-- Free Currency Converter API
+- Axios
+- React-toastify
 
 ## Desenvolvedor :octocat:
 
